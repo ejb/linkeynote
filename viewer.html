@@ -1,21 +1,111 @@
 <style>
 body {
     margin: 0;
+    overflow: hidden;;
 }
 webview {
-    display:inline-block;
+    display: block;
     width: 100%;
+    min-width: 100%;
     height: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: all 1s;
+}
+.main-content {
+/*    display: flex;
+    align-items: center;
+    justify-content: center;
+*/    position: relative;
+}
+h2 {
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: all 1s;
+}
+.active {
+    opacity: 1;
+    position: relative;
 }
 
 </style>
 
-<webview src=""></webview>
+<div class="main-content"></div>
+
 
 <script>
 
+var fs = require('fs');
+window.$ = window.jQuery = require('./jquery.js');
+
+var links = fs.readFileSync('links.txt', 'utf8').split('\n');
+var linkIndex = 0;
+
+var $main = $('.main-content');
+
+goToLink(0);
+
+function next(){
+    if (linkIndex < links.length-1) {
+        linkIndex += 1;
+        goToLink( linkIndex );
+    }
+}
+function prev(){
+    if (linkIndex > 0) {
+        linkIndex -= 1;
+        goToLink( linkIndex );
+    }
+}
+
+function goToLink(index) {
+    var existing = $main.find(':not(.preloading)');
+    // clear up any existing
+    existing.removeClass('active');
+    setTimeout(function(){
+        existing.remove();
+    },1000);
+
+    if (links[index]) {
+        if (isLink(links[index])) {
+            goToUrl( links[index] );
+        } else {
+            showText( links[index] );
+        }
+    }
+    if (links[index+1] && isLink(links[index+1])) {
+        // preload
+        preload(links[index+1]);
+    }
+}
+function isLink(string) {
+    return string.substring(0,4) === 'http';
+}
+
 function goToUrl(url) {
-    document.querySelector('webview').setAttribute('src',url);
+
+
+    var preloaded = $('.preloading[src="'+url+'"]');
+    if (preloaded.length > 0) {
+        preloaded.addClass('active')
+        preloaded.removeClass('preloading');
+    } else {
+        $main.append( '<webview src="'+url+'" class="active" url="'+url+'"></webview>' );
+    }
+    
+
+    
+}
+
+function preload(url){
+    if ($('.preloading[src="'+url+'"]').length === 0) {
+        $main.append( '<webview src="'+url+'" class="preloading" url="'+url+'"></webview>' );
+    }
+}
+
+function showText(text) {
+    $main.append( '<h2 class="active">'+text+'</h2>' );
 }
 
 
