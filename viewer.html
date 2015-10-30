@@ -49,42 +49,55 @@ h2 {
 var fs = require('fs');
 window.$ = window.jQuery = require('./jquery.js');
 
-var links = fs.readFileSync('links.txt', 'utf8').split('\n').filter(function(l){ return (l !== ''); });
-var linkIndex = 0;
-
-var $main = $('.main-content');
-
-goToLink(0);
-
-$(document).keydown(function(e){
-    if (e.keyCode == 37) { 
-        prev();
-        return false;
-    }
-});
-$(document).keydown(function(e){
-    if (e.keyCode == 39) { 
-        next();
-        return false;
-    }
+$(function(){
+    var links = fs.readFileSync('links.txt', 'utf8').split('\n').filter(function(l){ return (l !== ''); });
+    var viewer = new Viewer(links);
 });
 
 
-function next(){
-    if (linkIndex < links.length-1) {
-        linkIndex += 1;
-        goToLink( linkIndex );
+
+
+var Viewer = function(links){
+    this.links = links;
+    this.$main = $('.main-content');
+    this.setupKeys();
+    this.linkIndex = 0;
+    this.goToLink(0);
+}
+
+
+
+Viewer.prototype.setupKeys = function(){
+    var that = this;
+    $(document).keydown(function(e){
+        if (e.keyCode == 37) { 
+            that.prev();
+            return false;
+        }
+        if (e.keyCode == 39) { 
+            that.next();
+            return false;
+        }
+    });
+}
+
+
+Viewer.prototype.next = function(){
+    if (this.linkIndex < this.links.length-1) {
+        this.linkIndex += 1;
+        this.goToLink( this.linkIndex );
     }
 }
-function prev(){
-    if (linkIndex > 0) {
-        linkIndex -= 1;
-        goToLink( linkIndex );
+Viewer.prototype.prev = function(){
+    if (this.linkIndex > 0) {
+        this.linkIndex -= 1;
+        this.goToLink( this.linkIndex );
     }
 }
 
-function goToLink(index) {
-    var existing = $main.find(':not(.preloading)');
+Viewer.prototype.goToLink = function(index) {
+    var links = this.links;
+    var existing = this.$main.find(':not(.preloading)');
     // clear up any existing
     existing.removeClass('active');
     setTimeout(function(){
@@ -92,44 +105,43 @@ function goToLink(index) {
     },1000);
 
     if (links[index]) {
-        if (isLink(links[index])) {
-            goToUrl( links[index] );
+        if (this.isLink(links[index])) {
+            this.goToUrl( links[index] );
         } else {
-            showText( links[index] );
+            this.showText( links[index] );
         }
     }
-    if (links[index+1] && isLink(links[index+1])) {
+    if (links[index+1] && this.isLink(links[index+1])) {
         // preload
-        preload(links[index+1]);
+        this.preload(links[index+1]);
     }
 }
-function isLink(string) {
+Viewer.prototype.isLink = function(string) {
     return string.substring(0,4) === 'http';
 }
 
-function goToUrl(url) {
-
+Viewer.prototype.goToUrl = function(url) {
 
     var preloaded = $('.preloading[src="'+url+'"]');
     if (preloaded.length > 0) {
         preloaded.addClass('active')
         preloaded.removeClass('preloading');
     } else {
-        $main.append( '<webview src="'+url+'" class="active" url="'+url+'"></webview>' );
+        this.$main.append( '<webview src="'+url+'" class="active" url="'+url+'"></webview>' );
     }
     
 
     
 }
 
-function preload(url){
+Viewer.prototype.preload = function(url){
     if ($('.preloading[src="'+url+'"]').length === 0) {
-        $main.append( '<webview src="'+url+'" class="preloading" url="'+url+'"></webview>' );
+        this.$main.append( '<webview src="'+url+'" class="preloading" url="'+url+'"></webview>' );
     }
 }
 
-function showText(text) {
-    $main.append( '<h2 class="active">'+text+'</h2>' );
+Viewer.prototype.showText = function(text) {
+    this.$main.append( '<h2 class="active">'+text+'</h2>' );
 }
 
 
