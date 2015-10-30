@@ -1,7 +1,9 @@
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <style>
 body {
     margin: 0;
-    overflow: hidden;;
+    overflow: hidden;
+    background: #212121;
 }
 webview {
     display: block;
@@ -25,6 +27,12 @@ h2 {
     position: absolute;
     transition: all 1s;
     margin: 0;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-weight: regular;
+    text-align: center;
+    font-size: 80px;
+    padding-top: 400px;
 }
 .active {
     opacity: 1;
@@ -41,12 +49,26 @@ h2 {
 var fs = require('fs');
 window.$ = window.jQuery = require('./jquery.js');
 
-var links = fs.readFileSync('links.txt', 'utf8').split('\n');
+var links = fs.readFileSync('links.txt', 'utf8').split('\n').filter(function(l){ return (l !== ''); });
 var linkIndex = 0;
 
 var $main = $('.main-content');
 
 goToLink(0);
+
+$(document).keydown(function(e){
+    if (e.keyCode == 37) { 
+        prev();
+        return false;
+    }
+});
+$(document).keydown(function(e){
+    if (e.keyCode == 39) { 
+        next();
+        return false;
+    }
+});
+
 
 function next(){
     if (linkIndex < links.length-1) {

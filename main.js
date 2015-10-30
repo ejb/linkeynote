@@ -36,17 +36,7 @@ app.on('ready', function() {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
-  
-  globalShortcut.register('left', prev);
-  globalShortcut.register('right', next );
-  
+    
 });
-
-function next(){
-    mainWindow.webContents.executeJavaScript( 'next();' );
-}
-function prev(){
-    mainWindow.webContents.executeJavaScript( 'prev();' );
-}
 
 

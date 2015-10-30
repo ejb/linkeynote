@@ -1,44 +1,62 @@
-Explore a huge dataset
-http://graphics.wsj.com/european-stress-tests-2014/
-http://graphics.wsj.com/mapped-europes-pollution-problem/
-Calculators / change variables 
-http://graphics.wsj.com/medicare-billing/
+Explore huge data sets
+http://www.theguardian.com/society/ng-interactive/2015/sep/02/unaffordable-country-where-can-you-afford-to-buy-a-house
 http://projects.propublica.org/louisiana/#
-Provide annotated walk through datasets
+http://graphics.wsj.com/european-stress-tests-2014/
+
+Guide reader through complex charts
 http://graphics.wsj.com/countdown-to-a-greek-showdown/
-http://www.bloomberg.com/graphics/2014-america-shakes-off-oil-addiction/
+http://www.bloomberg.com/dataview/2014-04-17/how-americans-die.html
 http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
 http://www.vox.com/2015/10/26/9469793/tax-brackets
-Live data
-http://ampp3d.mirror.co.uk/2014/02/21/wayne-rooney-earnings/
+
+Incorporate live data
+http://graphics.wsj.com/uk-election-results-2015/
 http://graphics.wsj.com/oil-producers-break-even-prices/
-Tailor graphic to reader => input/output
-http://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html
+http://ampp3d.mirror.co.uk/2014/02/21/wayne-rooney-earnings/
+http://ampp3d.mirror.co.uk/2014/05/27/watch-how-many-foreigners-enter-the-uk-every-single-second/
+
+Place reader within the data
 http://www.nytimes.com/interactive/2013/12/20/sunday-review/dialect-quiz-map.html
 http://knightlab.northwestern.edu/2014/01/20/behind-the-dialect-map-interactive-how-an-intern-created-the-new-york-times-most-popular-piece-of-content-in-2013/
 http://www.bbc.co.uk/news/magazine-22000973
-http://www.bbc.com/earth/story/20141016-your-life-on-earth
-BuzzFeed quizzes
-Put reader in someone else’s shoes
-http://www.ft.com/ig/sites/2015/bbc/
-http://ig.ft.com/sites/climate-change-calculator/
-Commentary with a silly game
-http://games.usvsth3m.com/damascus/
-Or provoke thoughts with a serious game
-http://gamethenews.net/index.php/endgame-syria/
-http://www.bbc.co.uk/news/world-middle-east-32057601
-http://www.dailymail.co.uk/news/article-3027174/BBC-bosses-blasted-making-computer-game-called-Syria-Journey-refugees-fleeing-war-torn-country.html
-Greater depth - literally!
-http://graphics.wsj.com/3d-nasdaq/
-http://www.wsj.com/articles/SB12268843614978254751404581042321720914358
-http://graphics.latimes.com/mars-gale-crater-vr/
-http://www.niemanlab.org/2015/10/the-new-york-times-is-sending-out-a-million-google-cardboards-to-go-with-its-upcoming-vr-films/
+
+Create original data sets
+http://www.abc.net.au/news/nsw-election-2015/vote-compass/
+http://www.abc.net.au/news/nsw-election-2015/vote-compass/results/
+
 Infinite canvas
 http://apps.washingtonpost.com/g/page/world/the-depth-of-the-problem/931/
 http://www.buzzfeed.com/jsvine/29-million-cars#.ecYZGve86
 http://www.nytimes.com/interactive/2014/07/03/world/middleeast/syria-iraq-isis-rogue-state-along-two-rivers.html
-Perform live experiments!
+
+Art-directed longform stories
+http://www.nytimes.com/projects/2012/snow-fall/
+http://www.theguardian.com/world/interactive/2013/may/26/firestorm-bushfire-dunalley-holmes-family
+http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/
+http://graphics.wsj.com/libor-unraveling-tom-hayes/
+
+Challenge the reader with a simple game
+http://www.ft.com/ig/sites/2015/bbc/
+http://ig.ft.com/sites/climate-change-calculator/
+http://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html
+http://games.usvsth3m.com/damascus/
+
+Or provoke thought with a serious game
+http://gamethenews.net/index.php/endgame-syria/
+http://www.bbc.co.uk/news/world-middle-east-32057601
+http://www.dailymail.co.uk/news/article-3027174/BBC-bosses-blasted-making-computer-game-called-Syria-Journey-refugees-fleeing-war-torn-country.html
+
+Perform live experiments
 http://www.theguardian.com/society/ng-interactive/2015/feb/05/-sp-watch-how-measles-outbreak-spreads-when-kids-get-vaccinated
 http://www.washingtonpost.com/wp-srv/special/health/how-ebola-spreads/
-Be creative
+
+3D and VR
+http://graphics.wsj.com/3d-nasdaq/
+http://www.wsj.com/articles/SB12268843614978254751404581042321720914358
+http://graphics.latimes.com/mars-gale-crater-vr/
+http://www.niemanlab.org/2015/10/the-new-york-times-is-sending-out-a-million-google-cardboards-to-go-with-its-upcoming-vr-films/
+
+Let your imagination run wild
+http://graphics.wsj.com/how-i-learned-to-love-writing-with-emojis/
+http://qz.com/267635/explore-the-hidden-patterns-of-the-fashion-instagram-universe/
 http://www.nytimes.com/interactive/2014/06/19/sports/worldcup/goooooooooooooal.html
