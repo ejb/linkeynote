@@ -1,6 +1,8 @@
+What Interactives Can Do (That Articles Can't)
+
 Explore huge data sets
 http://www.theguardian.com/society/ng-interactive/2015/sep/02/unaffordable-country-where-can-you-afford-to-buy-a-house
-http://projects.propublica.org/louisiana/#
+https://projects.propublica.org/graphics/workcomp-company
 http://graphics.wsj.com/european-stress-tests-2014/
 
 Guide reader through complex charts
@@ -48,7 +50,7 @@ http://www.dailymail.co.uk/news/article-3027174/BBC-bosses-blasted-making-comput
 
 Perform live experiments
 http://www.theguardian.com/society/ng-interactive/2015/feb/05/-sp-watch-how-measles-outbreak-spreads-when-kids-get-vaccinated
-http://www.washingtonpost.com/wp-srv/special/health/how-ebola-spreads/
+http://flowingdata.com/2015/09/23/years-you-have-left-to-live-probably/
 
 3D and VR
 http://graphics.wsj.com/3d-nasdaq/

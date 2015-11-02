@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #212121;
+}
+webview {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: all 1s;
+}
+.main-content {
+    position: relative;
+}
+h2 {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: all 1s;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-weight: regular;
+    text-align: center;
+    font-size: 70px;
+    padding-top: 150px;
+}
+.active {
+    opacity: 1;
+    position: relative;
+}
